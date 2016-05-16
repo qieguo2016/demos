@@ -1,7 +1,7 @@
 MY DEMOS
 ---
 
-* [3D图片爆裂效果](http://qieguo2016.github.io/demos/3d_bomb/3dBomb.html)
+* [3D图片爆裂效果](http://qieguo2016.github.io/demos/3dBomb/3dBomb.html)
 * [转盘抽奖](http://qieguo2016.github.io/demos/lottery/lottery_01.html)
 * [粒子效果进度条](http://qieguo2016.github.io/demos/particlesLoader/particlesLoader.html)
 * [FakeZhihu](http://qieguo2016.github.io/demos/fakeZhihu/index.html)
