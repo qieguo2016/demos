@@ -1,0 +1,157 @@
+/********		common style 		********/
+a {
+	text-decoration: none;
+	display: block;
+	color: black;
+	/* height: 100%; */
+}
+
+/********************************************/
+
+
+.zh-nav {
+	position: relative;
+	z-index: 99;
+	top: 45px;
+	/* height: 2.25rem; */
+	background-color: #F3F3F3;
+}
+.zh-nav-menu {
+	padding: 0;
+	margin: 0;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	/* border-bottom: 1px solid #DFDFDF; */
+	text-align: center;
+	border-bottom: 1px solid #e1e1e1;
+}
+.zh-nav-menu-li {
+	position: relative;
+	box-sizing: border-box;
+	width: 20%;
+	height: 36px;
+	line-height: 36px;
+	flex: 1 1 auto;
+	list-style: none;
+}
+
+.zh-nav-user {
+	position: absolute;
+	top: 2.25rem;
+	left: -35%;
+	width: 140%;
+	padding: 0;
+	background-color: #F3F3F3;
+}
+.show .zh-nav-user-li {
+	box-sizing: border-box;
+	padding-left: 15px;
+	line-height: 3rem;
+	display: block;
+	border: none;
+	list-style: none;
+	text-align: left;
+}
+
+.zh-nav-user-li {
+	display: none;
+}
+
+.zh-nav-msg {
+	/*on normal condition, hide the message menu*/
+	display: none;
+}
+.zh-nav-msg.show {
+	/*show */
+	display: inherit;
+	box-sizing: border-box;
+	background-color: white;
+	border-bottom: 1px solid #DFDFDF;
+	width: 100%;
+}
+.zh-nav-msg-sort {
+	padding: 0;
+	margin: 0;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #DFDFDF;
+	text-align: center;
+}
+
+.msg-sort {
+	width: 100%;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	vertical-align: middle;
+	cursor: pointer;
+	flex: 1 1 auto;
+}
+.msg-sort i{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-top: 2px;
+}
+.sprites-b {
+	background-image: url(../img/sprites-1.9.2.4c54885a.png);
+	background-size: 308px 250px;
+	box-sizing: border-box;
+	background-clip: content-box;
+}
+.message i{
+	background-position: -94px -60px;
+}
+
+.user i{
+	background-position: -122px -60px;
+}
+
+.thanks i{
+	background-position: -150px -60px;
+}
+
+.current.message i{
+	background-position: -94px -81px;
+}
+
+.current.user i{
+	background-position: -122px -82px;
+}
+
+.current.thanks i{
+	background-position: -150px -82px;
+}
+
+.setting {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	border-bottom: 1px solid #DFDFDF;
+	flex-flow: row wrap;
+}
+
+.setting:last-child {
+	padding: 0 11px;
+}
+.setting a {
+	color: #999;
+}
+.setting h2 {
+	color: #666;
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.settingIcon {
+	width: 30px;
+	height: 36px;
+	padding: 6px 3px;
+	display: inline-block;
+	vertical-align: middle;
+	background-position: -47px -138px;
+}

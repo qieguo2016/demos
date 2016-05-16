@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>转盘抽奖——触屏滑动</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<style type="text/css">
+			html { font-size: 65px; }
+			body {
+				font-size: 15px;
+			    -webkit-overflow-scrolling:touch;
+			}
+			#lottery {
+				position: relative;
+				height: 4.5rem;
+				width: 4.5rem;
+				margin: 40px auto;
+				text-align: center;
+				background: url(img/disc-bg.gif) no-repeat;
+				background-size: 100% auto;
+				border-radius: 2.25rem;
+				box-shadow: 0px 0px 10px #2746B5;
+			}
+			#imgs {
+				position: absolute;
+				width: 3.52rem;
+				height: 3.52rem;
+				top: 0.47rem;
+				left: 0.47rem;
+				border-radius: 1.76rem;
+				
+				-webkit-transform: rotateZ(0deg);
+				-moz-transform: rotateZ(0deg);
+				-ms-transform: rotateZ(0deg);
+				transform: rotateZ(0deg);
+				-webkit-backface-visibility: hidden;
+				-moz-backface-visibility: hidden;
+				-ms-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-webkit-perspective: 1000;
+				-moz-perspective: 1000;
+				-ms-perspective: 1000;
+				perspective: 1000;
+			}
+			.arrow {
+				position: absolute;
+				width: 0.33rem;
+				height: 1.91rem;
+				top: 0.91rem;
+				left: 2.07rem;
+				background: url(img/arrow.png) no-repeat;
+				background-size: 100% auto;
+			}
+			.lot-btn {
+				position: absolute;
+				width: 0.92rem;
+				height: 0.92rem;
+				left: 1.77rem;
+				top: 1.81rem;
+				background: url(img/buttons_01.png) no-repeat;
+				background-size: 100% auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="lottery">
+			<img id="imgs" src="img/disc-rotate.gif" class="image">
+			<div class="arrow"></div>
+			<div class="lot-btn" id="start-btn"></div>
+		</div>
+		<a href="lottery_02.html">跑马灯抽奖</a>
+		
+		<script type="text/javascript">
+			(function (doc, win) {
+          		var docEl = doc.documentElement,
+           			resizeEvt = 'resize',
+	            	recalc = function () {
+	            		var clientWidth = docEl.clientWidth;
+	            		if (!clientWidth) {
+	            			return;	
+	            		} else if (clientWidth < 420 ) {
+		            		docEl.style.fontSize = 65 * (clientWidth / 320) + 'px';
+	            		} else{
+	            			docEl.style.fontSize = '100px';
+	            		}
+	            	};
+	        	if (!doc.addEventListener) return;
+	           	win.addEventListener(resizeEvt, recalc, false);
+	          	doc.addEventListener('DOMContentLoaded', recalc, false);
+	        })(document, window); // Responsive to screen size 
+		</script>
+		
+		<script type="text/javascript">
+			var rotate = document.getElementById('imgs');
+			var speed = vspeed = 0,
+				x0 = y0 = t0 = x1 = y1 = t1 = null;
+			
+			(function(){
+				var lastTime = 0;
+				var vendors = ['ms', 'moz', 'webkit', 'o'];
+				for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x){
+					window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+					window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+				};
+				
+				if(!window.requestAnimationFrame){
+					window.requestAnimationFrame = function(callback, element){
+						var currTime = new Date().getTime();
+						var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+						var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+						lastTime = currTime + timeToCall;
+						return id;
+					};
+				};
+				
+				if (!window.cancelAnimationFrame){
+					window.cancelAnimationFrame = function(id){
+						clearTimeout(id);
+					};
+				};
+			})(); // Setup requestAnimationFrame when it is unavailable.
+			
+			document.addEventListener('touchmove', function (e) {
+				e.preventDefault();
+			}); // prevent scrolling page
+			
+			rotate.addEventListener('touchstart', function (e) {
+				if (e.touches.length == 1) {
+			    	x0 = e.targetTouches[0].clientX;
+			    	y0 = e.targetTouches[0].clientY;
+			    	t0 = new Date().getTime();
+				}
+			});
+			
+			rotate.addEventListener('touchend', function (e) {
+				var that = this,
+					l = 0,
+					angle = 0,
+					timerID = null;
+				x1 = e.changedTouches[0].clientX;
+				y1 = e.changedTouches[0].clientY;
+				t1 = new Date().getTime();
+				l = Math.sqrt(Math.pow(x1-x0,2) + Math.pow(y1-y0,2));
+				speed = l/(t1-t0)*20;
+				if (speed < 10) return;
+				vspeed = 0.5;
+				
+				var roll = function () {
+					angle += speed;
+					that.style.transform = 'rotate(' + angle + 'deg)'; //'rotateZ('
+					switch (true){
+						case speed < -0.3:
+							window.cancelAnimationFrame(timerID);
+							return;
+						case speed < 10 && vspeed > 0.1:
+							speed -= vspeed;
+							vspeed -= 0.03;
+							break;
+						default:
+							speed -= vspeed;
+							break;
+					}
+					timerID = window.requestAnimationFrame(roll);
+				};
+				roll();
+			});
+			document.getElementById('start-btn').addEventListener('click', function () {
+				var angle = 0,
+					timerID = null;
+				speed = (1 + Math.random()) * 50;
+				vspeed = 0.5;
+				
+				var roll = function () {
+					angle += speed;
+					rotate.style.transform = 'rotateZ(' + angle + 'deg)';
+					switch (true){
+						case speed < -0.3:
+							window.cancelAnimationFrame(timerID);
+							return;
+						case speed < 10 && vspeed > 0.1:
+							speed -= vspeed;
+							vspeed -= 0.05;
+							break;
+						default:
+							speed -= vspeed;
+							break;
+					}
+					timerID = window.requestAnimationFrame(roll);
+				};
+				roll();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+		<title>Fake Zhihu</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="zh-top" id="zd-top">
+			<a class="zh-top-home-link" href="index.html">首页-知乎</a>
+			<form action="" method="get" class="zh-top-search" id="zd-top-search">
+				<input id="zd-top-search-input" class="zh-top-search-input" type="text" value="" placeholder="搜索你感兴趣的内容..." />
+				<input class="zh-top-search-btn" type="submit" value="" />
+			</form>
+			<input class="zh-top-ask-question" id="zd-top-ask-question" type="button" value="提问" />
+		</div>
+	
+		<div class="zh-nav" id="zd-nav">
+			<ul class="zh-nav-menu">
+				<li class="zh-nav-menu-li" id="zd-nav-menu-home">
+					<a href="index.html">首页</a>
+				</li>
+				<li class="zh-nav-menu-li" id="zd-nav-menu-topic">
+					<a href="">话题</a>
+				</li>
+				<li class="zh-nav-menu-li" id="zd-nav-menu-explore">
+					<a href="">发现</a>
+				</li>
+				<li class="zh-nav-menu-li" id="zd-nav-menu-msg">
+					<a href="#">消息<span class="arrow-down"></span></a>
+				</li>
+				<li class="zh-nav-menu-li" id="zd-nav-menu-user">
+					<a href="#">我<span class="arrow-down"></span></a>
+				</li>
+			</ul>
+			<ul class="zh-nav-user">
+				<li class="zh-nav-user-li"><a href="user.html">我的主页</a></li>
+				<li class="zh-nav-user-li"><a href="">私信</a></li>
+				<li class="zh-nav-user-li"><a href="">设置</a></li>
+				<li class="zh-nav-user-li"><a href="">退出</a></li>
+				<li class="zh-nav-user-li"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;∧</a></li>
+			</ul>
+			<div class="zh-nav-msg" id="zd-nav-msg"> 
+				<div class="zh-nav-msg-sort">
+					<button class="nav-msg-sort current" name="questions"><i class="sprites-b msg-icon"></i></button>
+					<button class="nav-msg-sort" name="users"><i class="sprites-b user-icon"></i></button>
+					<button class="nav-msg-sort" name="thanks"><i class="sprites-b thk-icon"></i></button>
+				</div>
+				<div class="zh-nav-msg-list">
+					<div class="zh-nav-msg-ctn">
+						<a href=""  class="blue-link" name="author">周宁奕</a> 回答了 <a href=""  class="blue-link" name="question">能利用爬虫技术做到哪些很酷很有趣很有用的事情？</a>
+					</div>
+					<div class="zh-nav-msg-ctn">
+						<a href=""  class="blue-link" name="author">周宁奕</a> 回复了你在 <a href=""  class="blue-link" name="question">能利用爬虫技术做到哪些很酷很有趣很有用的事情？</a> 中 <a href="" class="blue-link" name="author">周宁奕</a> 的回答下的评论
+					</div>
+					<div class="zh-nav-msg-ctn">
+						<a href="" class="blue-link" name="author">haochuan</a> 在 <a href="" class="blue-link" name="field">_haochuan的RandomNotes</a> 中发布了 <a href="" class="blue-link" name="article">当我们说软件工程师的时候我们在说什么</a>
+					</div>
+					<div class="zh-nav-msg-ctn">
+						<a href="" class="blue-link" name="author">康石石</a> 回答了 <a href="" class="blue-link" name="question">有哪些好的网站，让人第一眼看了就怦然心动，流连忘返？</a>
+					</div>
+					<div class="zh-nav-msg-ctn">
+						<a href="" class="blue-link" name="author">康石石</a> 回复了你在 <a href="" class="blue-link" name="question">有哪些好的网站，让人第一眼看了就怦然心动，流连忘返？</a> 中 <a href="" class="blue-link" name="author">康石石</a> 的回答下的评论
+					</div>
+					<div class="zh-nav-msg-ctn">
+						<a href="" class="blue-link" name="author">张科洋</a> 回答了 <a href="" class="blue-link" name="question">关于 JavaScript 的好书有哪些？</a>
+					</div>
+				</div>
+				<div class="zh-nav-msg-set">
+					<a href="" class=""><i class="sprites-b set-icon"></i>设置</a>
+					<a href="">查看全部 »</a>
+				</div><!--消息设置面板-->
+			</div><!--消息面板-->
+		</div><!--导航设置-->
+		
+		<div class="zh-main" id="zd-main">
+			<footer class="zh-main-footer" id="zh-main-footer">
+				<ul class="zh-main-footer-list">
+					<li><a href="#"><i class="sprites-b draft-icon"></i>我的草稿</a></li>
+					<li><a href="collections.html"><i class="sprites-b collect-icon"></i>我的收藏</a></li>
+					<li><a href=""><i class="sprites-b interest-icon"></i>我关注的问题</a></li>
+					<li><a href=""><i class="sprites-b invite-icon"></i>邀请我回答的问题</a></li>
+				</ul>
+				<ul class="zh-main-footer-list">
+					<li><a href=""><i class="sprites-b square-icon"></i>话题广场</a></li>
+					<li><a href=""><i class="sprites-b public-icon"></i>公共编辑动态</a></li>
+					<li><a href=""><i class="sprites-b com-icon"></i>社区服务中心</a></li>
+				</ul>
+				<h3>知乎专栏</h3>
+				<div class="zh-main-footer-list">
+					<a href=""><i class="sprites-c discover-icon"></i>专栏 • 发现</a>
+				</div>
+				<div class="zh-main-footer-list">
+					<a href=""><i class="sprites-c writing-icon"></i>写文章</a>
+				</div>
+			</footer>
+		</div>
+		
+		<footer class="copyright">
+			<p>Created By <a class="blue-link" href="http://www.cnblogs.com/qieguo/">Qieguo</a>, Under MIT License</p>
+		</footer>
+		
+		<div class="zh-mask" id="zd-mask">
+			<div class="zh-mask-ask" id="zd-mask-ask">
+				<div class="zh-mask-ask-title">
+					<span>提问</span><i class="sprites-b cancel-icon" data-opt="cancel"></i>
+				</div>
+				<form class="zh-mask-ask-wrap" action="" method="post">
+					<textarea name="question" rows="1" cols="" placeholder="写下你的问题"></textarea>
+					<div class="zh-mask-ask-descrip">
+						<div>问题说明(可选)</div>
+						<textarea name="question-descrip" rows="3" cols="" placeholder="问题背景、条件等详细信息"></textarea>
+					</div>
+					<div class="zh-mask-ask-sort">
+						<div>话题分类</div>
+						<div class="zh-mask-ask-sort-input">
+							<i class="sprites-b search-icon"></i>
+							<input type="text" value="" placeholder="搜索话题" />
+						</div>
+					</div>
+					<div class="zh-mask-ask-operate">
+						<label for="anonymous"><input type="checkbox" name="" id="anonymous" value=""/>匿名</label>
+						<a class="blue-link" data-opt="cancel" href="javascript:void(0);">取消</a>
+						<input type="submit" value="发布"/>
+					</div><!--匿名取消发布问题操作-->
+				</form><!--问题表单-->
+			</div><!--提问遮罩-->
+		</div><!--全屏遮罩-->
+		
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+	<!--
+    	作者：茄果   http://www.cnblogs.com/qieguo/
+    	时间：2016-05-07
+    	描述：这是一个练手的项目，模仿知乎Web版本。
+    	           需要注意类和id的命名规范，这里虽然是我独立编写的，但也加了个命名空间。如果可能的话，我觉得先搭好主体设计好命名再开始写代码可能更好。
+    	 	还有就是结构方面，这次没有全盘思考过结构，所以结构还是比较凌乱的，web版其实也需要做SEO优化，这个以后再说了。
+    -->
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<meta name="Keywords" content="音乐可视化,webAudio,music,音乐,HTML5,canvas,CSS3,自适应">
+		<meta name="Description" content="利用HTML5 webAudio API 和canvas API以及CSS3制作音乐播放可视化效果">
+		<meta name="Author" content="Qieguo">
+		<title>HTML5 Web Audio Demo</title>
+		<link rel="icon" href="resource/cd_blue.png">
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: arial, "Microsoft YaHei";
+				font-size: 16px;
+				background-color: #272822;
+				color: #FEFEFE;
+			}
+			
+			div.msg {
+				position: fixed;
+				left: 5px;
+				top: 5px;
+			}
+			
+			#info {
+				padding: 0;
+				margin: 1px;
+				-webkit-user-select:none
+			}
+			
+			#fileIn {
+				text-decoration: underline;
+				color: #36B953;
+				-webkit-user-select:none
+			}
+			
+			#fileIn:hover {
+				cursor: pointer;
+				color: #FF00B4;
+			}
+			
+			#uploader {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="msg">
+				<p id="info">HTML5 Audio visualizer</p>
+				<span id="fileIn">
+					Click me to select an audio file.
+				</span>
+				<input type="file" id="uploader"/>
+			</div>
+			<canvas id="drawCanvas" width="" height=""></canvas>
+		</div>
+		
+		<script src="js/loader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,124 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.bodymask {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: transparent;
+	color: hsl(120, 100%, 65%);
+}
+
+.shake-box {
+	width  : 100%;
+	height : 100%;
+	
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+    -webkit-align-items: center;
+	align-items: center;
+	
+	background: url(../source/shakBox.png) no-repeat #292C2D center center;
+	background-size: 225px 254px;
+}
+
+.shake-backimage {
+	box-sizing: border-box;
+	width: 100%;
+	height: 0;
+
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	text-align: center;
+	background-color: #282E2C;
+	border: none;
+	border-color: #474A50;
+	border-style: solid;
+	border-width: 0;
+	/*-webkit-transition: all 0.5s;
+	transition: all 0.5s;	effect of transision is not good */
+}
+
+.shake-backimage img {
+	width: auto;
+	height: 100%;
+}
+
+.shake-upside {
+	height: 100px;
+	width: 100%;
+	flex: 1 1 auto;
+
+	-webkit-box-flex: 1.0;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: end;
+	-webkit-box-align: stretch;
+	
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	-webkit-justify-content: flex-end;
+	justify-content: flex-end;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	
+	background-color: #292C2D;
+}
+.shake-upside-inner {
+	box-sizing: border-box;
+	height: 111px;
+	-webkit-box-flex: 0;
+	flex: 0 0 111px;
+	
+	background: url(../source/shakBox.png) no-repeat #292C2D;
+	background-size: 225px 254px;
+	background-position: center -20px;
+	background-origin: content-box;
+}
+
+.shake-downside {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100px;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+	
+	background: url(../source/shakBox.png) no-repeat #292C2D;
+	background-position: center -130px;
+	background-size: 225px 254px;
+}
+
+.shaking .shake-backimage {
+	-webkit-animation: onshaking 2s ease 2 alternate; /* Safari Chrome and X5 */
+	animation: onshaking 2000ms cubic-bezier(0.57, 0.02, 0.12, 0.95) 2 alternate;
+}
+
+
+@-webkit-keyframes onshaking { 		/* Safari Chrome and X5 */
+	0%   {height: 0; border-width: 0;}
+	5%  {height: 0; border-width: 5px 0; }
+	50%  {height: 200px;  border-width: 5px 0;}
+	100% {height: 200px;  border-width: 5px 0;}
+}
+
+@keyframes onshaking {
+	0%   {height: 0; border-width: 0;}
+	5%  {height: 0; border-width: 5px 0; }
+	50%  {height: 200px;  border-width: 5px 0;}
+	100% {height: 200px;  border-width: 5px 0;}
+}

@@ -1,0 +1,98 @@
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.zh-top {
+	/*on normal condition*/
+	position: fixed;
+	z-index: 900;
+	box-sizing: border-box;
+	width: 100%;
+	/* height: 2.813rem; */
+	padding: 6px;
+	background-color: #0766C5;
+	background: -webkit-linear-gradient(#086DD4, #055DB6);
+	background: linear-gradient(#086DD4, #055DB6);
+	border-bottom: 1px solid #055DB6;
+}
+.zh-top-home-link {
+	float: left;
+	width: 61px;
+	height: 31px;
+	margin-top: -1px;
+	background-image: url(../img/new_logo@2x.9187366b.png);
+	background-size: 61px 31px;
+	background-repeat: no-repeat;
+	text-indent: -999px;
+}
+.zh-top-search {
+	position: absolute;
+	left: 77px;
+	right: 4.75rem;
+	height: 1.875rem;
+	/*margin-left: 70px;*/
+	/*margin-right: 0.2rem;*/
+	/* margin-top: 1px; */
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: #E1EAF2;
+	border-radius: 4px;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+.zh-top-search-input {
+	width: 0;
+	margin-left: 10px;
+	flex: 1 1 auto;
+	background: transparent;
+	border: none;
+	font-size: 0.9rem;
+}
+.zh-top-search-input:focus {
+	outline: none;
+}
+.zh-top-search-btn {
+	box-sizing: border-box;
+	width: 1.875rem;
+	height: 1.875rem;
+	padding: 0.5rem;
+	border: none;
+	flex: 0 0 auto;
+	background-color: transparent;
+	background-image: url(../img/sprites@2x.auto.1cc5b15c.png);
+	background-size: 4.5rem 4.375rem;
+	background-position: -2.25rem -0.5rem;
+	background-clip: content-box;
+	cursor: pointer;
+}
+.zh-top-search-btn:focus {
+	outline: none;
+}
+.zh-top-add-question {
+	float: right;
+	width: 3.8rem;
+	height: 2rem;
+	/* margin-right: 0px; */
+	color: white;
+	background-color: #0D76E1;
+	box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 1px 2px 6px rgba(255,255,255,0.25);
+	border: 1px solid #045bb2;
+	border-radius: 3px;
+	font-family: monospace;
+	font-size: 1em;
+	cursor: pointer;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+.zh-top.searching .zh-top-add-question {
+	/*searching, searchInput got focus*/
+    opacity: 0;
+}
+.zh-top.searching .zh-top-search {
+	/*searching, searchInput got focus*/
+    right: 6px;
+    background-color: white;
+}
