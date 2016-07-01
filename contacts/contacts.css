@@ -1,0 +1,132 @@
+/* common CSS start */
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	line-height: 1.6;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* common CSS end */
+
+.base-layer {
+	display: none;
+}
+
+.cd {
+	margin: 15px 0;
+	/* display: none; */
+}
+
+.cd-item {
+	box-sizing: border-box;
+	height: 44px;
+	margin: 0 15px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #ccc;
+	list-style-type: none;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+
+.cd-input {
+	margin-left: 12px;
+	font-size: 17px;
+	border: none;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	min-width: 220px;
+	line-height: 23px;
+}
+
+.cd-input:focus,
+.cd-input:active {
+	outline: none;
+}
+
+.ct {
+	/* text-align: center; */
+	margin: 0 15px;
+}
+
+.ct-btn {
+	color: white;
+	background-color: #2a93ff;
+	height: 40px;
+	border: none;
+	font-size: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 20px;
+}
+
+.ct-btn:focus,
+.ct-btn:active {
+	outline: none;
+}
+
+.mordal-layer {
+	/* display: none; */
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	background-color: white;
+	padding-top: 50px;
+}
+
+.card-img {
+	width: 256px;
+	height: 256px;
+	/* z-index: 200; */
+	/* position: absolute; */
+	/* left: 30px; */
+	/* opacity: 0.5; */
+}
+.handle-wrp {
+	margin: 15px 10px;
+}
+.hint {
+	margin-top: 5px;
+}
+canvas {
+	display: none;
+}
