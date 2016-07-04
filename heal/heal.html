@@ -7,7 +7,7 @@
 		<meta name="author" content="Qieguo: www.cnblogs.com/qieguo">
 		<meta name="description" content="图片爆炸，酷炫动态效果，CSS3动画，HTML5性能优化">
 		<title>密集恐惧症患者福音</title>
-		<link rel="stylesheet" type="text/css" href="heal.css"/>
+		<link rel="stylesheet" type="text/css" href="heal.css" />
 	</head>
 
 	<body>
@@ -15,10 +15,9 @@
 			<li class="wrp"></li>
 			<li class="wrp"></li>
 			<li class="wrp"></li>
-			<li class="wrp"></li>
 		</ul>
 
-		<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/require.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			// 根据窗口尺寸设定容器尺寸
 			(function() {
@@ -33,14 +32,16 @@
 
 				wrps = document.getElementsByClassName('wrp');
 				for (var i = 0, len = wrps.length; i < len; i++) {
-					wrps[i].style = 'width:' + side + 'px;height:' + side + 'px;';
+					wrps[i].style = 'width:' + side + 'px; height:' + side + 'px;';
 				}
 			})();
 
 			require.config({　　　　
 				baseUrl: "lib",
 				　　　paths: {　　　　　　
-					"rectangle": "rectangle"
+					"rectangle": "rectangle",
+					"hexagons": "hexagons",
+					"cubes": "cubes"
 				}
 			});　
 
@@ -48,32 +49,31 @@
 			require(['rectangle'], function(app) {
 				var cnt = document.getElementsByClassName('wrp');
 				app.init({
-					cnt: cnt[0], 
+					cnt: cnt[0],
 					num: 10
 				});
 				app.draw();
 			});
-			
+
 			// load hexagons.js　　
 			require(['hexagons'], function(app) {
 				var cnt = document.getElementsByClassName('wrp');
 				app.init({
-					cnt: cnt[1], 
+					cnt: cnt[1],
 					num: 20
 				});
 				app.draw();
 			});
-			
+
 			// load cubes.js　　
 			require(['cubes'], function(app) {
 				var cnt = document.getElementsByClassName('wrp');
 				app.init({
-					cnt: cnt[2], 
+					cnt: cnt[2],
 					num: 20
 				});
 				app.draw();
 			});
-			
 		</script>
 	</body>
 
