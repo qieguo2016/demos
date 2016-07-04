@@ -1,0 +1,56 @@
+/* common CSS start */
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	line-height: 1.6;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+a img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* common CSS end */
+
+.main-ls {
+	margin: 15px 0;
+}
+
+.wrp {
+	margin: 0 15px;
+	display: inline-block;
+}
+
+canvas {
+	box-sizing: border-box;
+	border: 1px solid hsl(0, 100%, 50%);
+}

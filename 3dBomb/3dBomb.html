@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-		<meta name="author" content="Qieguo: www.cnblogs.com/qieguo">       	
+		<meta name="author" content="Qieguo: www.cnblogs.com/qieguo">
 		<meta name="description" content="图片爆炸，酷炫动态效果，CSS3动画，HTML5性能优化">
-		<title>图片大爆炸--嚣张的索大</title>
+		<title>图片大爆炸</title>
 		<style type="text/css">
-			html, body {
+			html,
+			body {
 				margin: 0;
 				height: 100%;
 			}
+			
+			h3 {
+				width: 280px;
+				margin: 15px auto;
+			}
+			
 			.wrapper {
 				width: 160px;
-				margin: 100px auto 0;
+				margin: 80px auto 0;
 				position: relative;
 				cursor: pointer;
 				perspective: 200px;
 			}
 		</style>
 	</head>
+
 	<body>
 		<!--Created by Qieguo on 2016-05-15. http://www.cnblogs.com/qieguo/-->
+		<h3>点击图片，体验扑面而来的感觉</h3>
 		<div class="wrapper" id="zd-wrap"></div>
-		
+
 		<script src="js/bomb.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-		
 			var explore = new ParticlesTemplate(),
 				exploreImg = new Image(),
 				wrapper = document.getElementById('zd-wrap');
-			exploreImg.src = 'img/zoro.jpg';	//160*160，or you need to change wrapper's size
-			exploreImg.onload = function () {
+			exploreImg.src = 'img/zoro.jpg'; //160*160，or you need to change wrapper's size
+			exploreImg.onload = function() {
 				explore.init(exploreImg, wrapper);
-				wrapper.addEventListener('click', function () {
-				    explore.go();
+				wrapper.addEventListener('click', function() {
+					explore.go();
 				}, false);
 			};
-		
 		</script>
 	</body>
+
 </html>
