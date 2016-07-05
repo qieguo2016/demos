@@ -46,8 +46,10 @@ a {
 }
 
 .wrp {
+	box-sizing: border-box;
 	margin: 0 15px;
 	display: inline-block;
+	border: 1px solid black;
 }
 
 canvas {
