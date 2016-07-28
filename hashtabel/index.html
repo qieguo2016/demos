@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta name="author" content="Qieguo: www.cnblogs.com/qieguo">
+		<meta name="description" content="利用哈希表来匹配全文关键词">
+		<title>利用哈希表来匹配全文关键词</title>
+		<style type="text/css">
+			.input {
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>输入文件必须为纯文本文件、UTF-8编码</p>
+		<div class="input">
+			keyword: <input type="file" id="searchKeyWords" accept="text/plain" />
+		</div>
+		<div class="input">
+			content: <input type="file" id="searchSrc" accept="text/plain" />
+		</div>
+		<script src="search.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = (function() {
+				var searchWord;
+
+				function bindEvent() {
+					var keywords = document.getElementById("searchKeyWords");
+					keywords.onchange = function() {　　
+
+						//文件长度不为0则真的选中了文件，因为用户点击取消也会触发onchange事件。
+						if(this.files.length !== 0) {　　
+
+							//得到用户选取的文件
+							var file = this.files[0];
+
+							//文件选定之后，马上用FileReader进行读入
+							var fr = new FileReader();
+
+							//文件读入完成，最好校验一下
+							fr.onload = function(e) {　　　　　　
+								var result = e.target.result;
+								result = result.replace(/[\r\n]/g, '').split('、');
+								searchWord.init(result);
+							};
+
+							//文件读入出错
+							fr.onerror = function(err) {　　　　　　
+								alert('!Fail to read the file');
+							};
+
+							// 文本读取方式
+							fr.readAsText(file, 'UTF-8');
+						}
+					};
+
+					var searchSrc = document.getElementById("searchSrc");
+					searchSrc.onchange = function() {　　
+
+						//文件长度不为0则真的选中了文件，因为用户点击取消也会触发onchange事件。
+						if(this.files.length !== 0) {　　
+
+							//得到用户选取的文件
+							var file = this.files[0];
+
+							//文件选定之后，马上用FileReader进行读入
+							var fr = new FileReader();
+
+							//文件读入完成，最好校验一下
+							fr.onload = function(e) {　　　　　　
+								var result = e.target.result;　　
+								console.log('Search Result: ', searchWord.search(result));
+							};
+
+							//文件读入出错
+							fr.onerror = function(err) {　　　　　　
+								alert('!Fail to read the file');
+							};
+
+							// 文本读取方式
+							fr.readAsText(file, 'UTF-8');
+						}
+					};
+				}
+
+				function init() {
+					searchWord = new keywordSearch();
+
+					bindEvent();
+				}
+
+				return {
+					init: init
+				};
+			})();
+			app.init();
+		</script>
+
+	</body>
+
+</html>

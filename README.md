@@ -1,5 +1,6 @@
 MY DEMOS
 ---
+* **[多关键词匹配](http://qieguo2016.github.io/demos/hashtabel/index.html)** (PS：关键词需要以中文顿号、分隔)
 
 * **[二维码名片](http://qieguo2016.github.io/demos/contacts/contacts.html)**
 

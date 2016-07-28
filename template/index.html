@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta name="author" content="Qieguo: www.cnblogs.com/qieguo">
+		<meta name="description" content="模板技术原型分析">
+		<title>模板技术原型</title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
+
+	<body>
+
+		<script type="text/html" id="tpl_list">
+			<li class="cmt_li">
+				<span class="cmt_author">{cmt_author}</span>
+				<span class="cmt_id">{cmt_id}</span>
+				<span class="cmt_text">{cmt_id}</span>
+			</li>
+		</script>
+
+		<div id="wrp">
+
+		</div>
+
+		<script type="text/javascript">
+			// 字符串里面只要能执行是否、数组或对象的展开就行了。
+			function add(cnt, data) {
+				var cls = data.cls,
+					author = data.author,
+					id = data.id,
+					txt = data.txt;
+
+				var match;
+				var re = /{([^}]+)?}/g;
+
+				var tpl =
+					'<ul class={cls}>\
+						<li class="cmt_li">\
+							<span class="cmt_author">{author}</span>\
+							<span class="cmt_id">{id}</span>\
+							<span class="cmt_text">{txt ? txt : "nothing" }</span>\
+						</li>\
+					</ul>';
+
+				while(match = re.exec(tpl)) {
+					console.log('match: ', match);
+					tpl = tpl.replace(match[0], eval(match[1]));
+				}
+				cnt.innerHTML = tpl;
+			}
+			add(document.getElementById('wrp'), {
+				cls: 'cmts',
+				author: 'Jack',
+				id: '10000',
+				txt: 'Say something!'
+			});
+		</script>
+
+		<!--<script src="index.js" type="text/javascript" charset="utf-8"></script>-->
+
+	</body>
+
+</html>
