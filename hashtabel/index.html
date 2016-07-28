@@ -15,13 +15,14 @@
 	</head>
 
 	<body>
-		<p>输入文件必须为纯文本文件、UTF-8编码</p>
+		<p>输入文件必须为纯文本文件、UTF-8编码。结果请看console输出。</p>
 		<div class="input">
 			keyword: <input type="file" id="searchKeyWords" accept="text/plain" />
 		</div>
 		<div class="input">
 			content: <input type="file" id="searchSrc" accept="text/plain" />
 		</div>
+		<p>测试结果：关键词300个成语，目标文本《搜神记1》，约50万字；总耗时：1.1s。</p>
 		<script src="search.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var app = (function() {
