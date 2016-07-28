@@ -1,0 +1,28 @@
+.cmts {
+	list-style-position: inside;
+	padding: 0;
+}
+
+.cmt_li {
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0 5px 5px;
+	list-style-type: circle;
+}
+
+.cmt_author {
+	display: inline-block;
+	width: 150px;
+	vertical-align: middle;
+}
+
+.cmt_id {
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+}
+
+.cmt_text {
+	display: inline-block;
+	width: calc(100% - 150px - 100px - 30px);
+	vertical-align: middle;
+	

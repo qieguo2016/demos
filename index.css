@@ -1,0 +1,10 @@
+ul {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+li {
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+}
