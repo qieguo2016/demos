@@ -1,0 +1,26 @@
+.wrp {
+	width: 180px;
+	margin: 70px 10px 30px 30px;
+	position: relative;
+	overflow: hidden;
+}
+
+.bgc {
+	position: absolute;
+	/* left: 50%; */
+	transform: translate(-50%, -50%);
+	/* top: 50%; */
+	background-color: rgba(97, 97, 97, 0.5);
+	border-radius: 50%;
+	transition: all 3s;
+	/* width: 360px; */
+	/* height: 360px; */
+}
+
+.ripple {
+	width: 180px;
+	height: 120px;
+	background-color: rgba(255, 255, 255, 1);
+	outline: none;
+	border: 1px solid #333;
+}

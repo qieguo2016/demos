@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM</title>
+		<style type="text/css">
+			.foo:nth-child(1) {
+				background: blue;
+			}
+			
+			.foo:nth-of-type(3) {
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--wrapper-->
+		<div class="wrp">
+			<!--wrp
+			<img myprop="papapa" src="/sub/123.jpg" />-->
+			<p>1</p>
+			<p class="foo">2</p>
+			<p class="foo">3</p>
+			<p class="foo">4</p>
+			<p class="foo">5</p>
+
+		</div>
+		<script type="text/javascript">
+			function tofn(el) {
+				return function() {
+					console.log(el);
+				};
+			}
+
+			var a = [0, 1, 2, 3, 4, 5];
+			var b = a.map(tofn);
+		</script>
+
+		<script type="text/javascript">
+			var a = {
+				name: 'hanzichi',
+				age: 10,
+				location: 'china'
+			};
+
+			var b = {
+				name: 'curry'
+			};
+
+			var c = {
+				name: 'kobe',
+				sex: 'male'
+			};
+			var objs = [a, b, c];
+
+			function sortObjs(o1, o2) {
+
+			}
+			objs.sort();
+
+			function add(num) {
+				num += ~~add;
+				add.num = num;
+				return add;
+			}
+			add.valueOf = add.toString = function() {
+				return add.num
+			};
+			var ans = add(3)(4)(5)(6); // 18
+			alert(ans);
+		</script>
+
+		<script>
+			function mywalker(el, filter, cb) {
+				var children = el.children;
+				for(var i = 0, len = children.length; i < len; i++) {
+					var walker = children[i];
+					if(walker.children.length !== 0) {
+						mywalker(walker, filter, cb);
+					} else if(filter(walker)) {
+						cb(walker);
+					}
+				}
+			}
+
+			var div = document.querySelector('.wrp');
+
+			function filter(node) {
+				return node.tagName.toLowerCase() === 'input';
+			}
+
+			function cb(node) {
+				console.log(node.className);
+			}
+
+			mywalker(div, filter, cb);
+
+			//			var filter = function(node) {
+			//				return node.tagName.toLowerCase() === 'input' ?
+			//					NodeFilter.FILTER_ACCEPT :
+			//					NodeFilter.FILTER_SKIP;
+			//			}
+			//
+			//			var walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, filter, false);
+			//			var n = walker.firstChild();
+			//			while(n !== null) {
+			//				console.log(n.className);
+			//				n = walker.nextNode();
+			//			}
+
+			//	var myIterator = document.createNodeIterator(div, NodeFilter.SHOW_ELEMENT, filter, false);
+			//	var n = myIterator.nextNode(); // move to root(div)
+			//	while(n !== null) {
+			//		console.log(n.className);
+			//		n = myIterator.nextNode();
+			//	}
+		</script>
+	</body>
+
+</html>
